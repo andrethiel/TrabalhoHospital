@@ -1,0 +1,19 @@
+﻿<Window x:Class="Hospital.Views.frmBuscaPaciente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.Views"
+        mc:Ignorable="d"
+        Title="frmBuscaPaciente" Height="450" Width="510"  WindowStartupLocation="CenterScreen" FontSize="16" FontWeight="Medium">
+    <Grid>
+        <DataGrid Height="148" HorizontalAlignment="Center" Margin="0,171,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="490" MouseDoubleClick="dataGrid1_MouseDoubleClick" RowHeight="30" ColumnWidth="100"
+                  CanUserReorderColumns="False" CanUserResizeColumns="False" SelectionMode="Extended" IsReadOnly="True" />
+        <TextBox x:Name="txtNome" HorizontalAlignment="Center" Margin="0,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490"/>
+        <Button Content="Buscar paciente" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.458" Click="Button_Click" Width="490"/>
+        <Label Content="Buscar Paciente" FontSize="18" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Digite o nome do paciente" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Lista de pacientes" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

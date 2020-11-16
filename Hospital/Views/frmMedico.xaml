@@ -1,0 +1,31 @@
+﻿<Window x:Class="Hospital.Views.frmMedico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.Views"
+        mc:Ignorable="d"
+        Title="frmMedico" Height="523" Width="459" WindowStartupLocation="CenterScreen" FontSize="16" FontWeight="Medium">
+    <Grid>
+        <Label Content="Cadastrar Prescrição Paciente" FontSize="18" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Selecione o paciente" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,49,0,0"/>
+        <DataGrid Name="grid" Margin="10,85,10,329" AutoGenerateColumns="False" MouseDoubleClick="grid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tipo do atendimento" Binding="{Binding Tipo}"  Width="1*" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"  Width="1*" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Sintomas" Binding="{Binding Sintomas}"  Width="1*" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="grid_prescricao" Margin="10,212,10,180" AutoGenerateColumns="False" MouseDoubleClick="grid_prescricao_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Prescricao"   Binding="{Binding TextoPrescricao}"  Width="1*" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Prescrição" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,176,0,0"/>
+        <Label Content="Descreva a prescrição" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,332,0,0"/>
+        <TextBox Name="txtPrescricao" HorizontalAlignment="Center" Margin="0,368,0,0" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" VerticalAlignment="Top" Width="439" Height="74"/>
+        <Button Content="Cadastrar" Name="btnCadastrar" HorizontalAlignment="Left" Margin="10,457,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Alterar" Name="btnAlterar" HorizontalAlignment="Left" Margin="96,457,0,0" VerticalAlignment="Top" Visibility="Hidden" Click="btnAlterar_Click"/>
+        <Button Content="Remover" Name="btnRemover" HorizontalAlignment="Left" Margin="165,457,0,0" VerticalAlignment="Top" Visibility="Hidden" Click="btnRemover_Click"/>
+    </Grid>
+</Window>

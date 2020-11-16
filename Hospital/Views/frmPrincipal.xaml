@@ -1,0 +1,24 @@
+﻿<Window x:Class="Hospital.Views.frmPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.Views"
+        mc:Ignorable="d"
+        Title="frmPrincipal" Height="450" Width="800">
+    <Grid>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="750">
+            <MenuItem Header="_Arquivo">
+                <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Paciente">
+                <MenuItem x:Name="CadastrarPaciente" Header="Cadastrar" Click="CadastrarPaciente_Click"/>
+                <MenuItem x:Name="BuscarPaciente" Header="Buscar" Click="BuscarPaciente_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Medico">
+                <MenuItem x:Name="Atendimento" Header="Buscar Atendimento" Click="Atendimento_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Sobre"/>
+        </Menu>
+    </Grid>
+</Window>
