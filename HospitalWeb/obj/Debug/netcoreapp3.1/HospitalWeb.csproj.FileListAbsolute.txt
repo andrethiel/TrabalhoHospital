@@ -73,3 +73,10 @@ D:\Documents\GitHub\Hospital\HospitalWeb\bin\Debug\netcoreapp3.1\Humanizer.dll
 D:\Documents\GitHub\Hospital\HospitalWeb\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.Views.pdb
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.genruntimeconfig.cache
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.csprojAssemblyReference.cache
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Medico\Index.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\Cadastrar.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\Buscar.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Cadastrar.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Index.cshtml.g.cs

@@ -2,26 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HospitalWeb.Models;
+using Hospital.DAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalWeb.Controllers
 {
     public class PacienteController : Controller
     {
+        private readonly PacienteDAO _pacienteDAO;
 
+        public PacienteController(PacienteDAO pacienteDAO) => _pacienteDAO = pacienteDAO;
         public IActionResult Index()
         {
             return View();
         }
-        //[HttpPost]
-        //[Route("CriarUsuario")]
-        //public IActionResult Cadastrar(Paciente paciente) 
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        paciente.Nome =
-        //    }
-        //}
+        public IActionResult Cadastrar()
+        {
+            return View();
+        }
     }
 }

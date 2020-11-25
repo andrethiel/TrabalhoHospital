@@ -12,5 +12,13 @@ namespace HospitalWeb.Controllers
         {
             return View();
         }
+        public IActionResult Cadastrar()
+        {
+            return View();
+        }
+        public IActionResult Buscar()
+        {
+            return View();
+        }
     }
 }

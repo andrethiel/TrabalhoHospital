@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Hospital.Data
 {
-    class Context : DbContext
+    public class Context : DbContext
     {
         public Context(DbContextOptions<Context> options) : base(options)
         {

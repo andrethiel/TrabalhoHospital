@@ -7,7 +7,7 @@ using System.Text;
 namespace HospitalWeb.Models
 {
     [Table("Atendimento")]
-    class Atendimento
+    public class Atendimento
     {
         public Atendimento() => CriadoEm = DateTime.Now;
         public int ID { get; set; }

@@ -6,7 +6,7 @@ using System.Text;
 namespace HospitalWeb.Models
 {
     [Table("Prescricao")]
-    class Prescricao
+    public class Prescricao
     {
         public int ID { get; set; }
         public string TextoPrescricao { get; set; }

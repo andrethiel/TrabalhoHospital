@@ -9,21 +9,22 @@ using System.Text;
 
 namespace Hospital.DAL
 {
-    class PacienteDAO
+    public class PacienteDAO
     {
-        private readonly Context context;
+        private readonly Context _context;
 
-        public Paciente BuscaPacienteID(int atendimento) => context.Pacientes.FirstOrDefault(x => x.ID == atendimento);
-        public Paciente BuscaPacienteNome(string nome) => context.Pacientes.FirstOrDefault(x => x.Nome == nome);
+        public PacienteDAO(Context context) => _context = context;
+        public Paciente BuscaPacienteID(int atendimento) => _context.Pacientes.FirstOrDefault(x => x.ID == atendimento);
+        public Paciente BuscaPacienteNome(string nome) => _context.Pacientes.FirstOrDefault(x => x.Nome == nome);
 
-        public List<Paciente> BuscaPacienteLista(string nome) => context.Pacientes.Where(x => x.Nome.Contains(nome)).ToList();
+        public List<Paciente> BuscaPacienteLista(string nome) => _context.Pacientes.Where(x => x.Nome.Contains(nome)).ToList();
 
         public bool CadastrarPaciente(Paciente paciente)
         {
             if(BuscaPacienteNome(paciente.Nome) == null)
             {
-                context.Pacientes.Add(paciente);
-                context.SaveChanges();
+                _context.Pacientes.Add(paciente);
+                _context.SaveChanges();
                 return true;
             }
             return false;
@@ -31,8 +32,8 @@ namespace Hospital.DAL
 
         public bool AlteraraPaciente(Paciente paciente)
         {
-            context.Pacientes.Update(paciente);
-            context.SaveChanges();
+            _context.Pacientes.Update(paciente);
+            _context.SaveChanges();
             return true;
         }
     }

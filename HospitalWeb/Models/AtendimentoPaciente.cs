@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HospitalWeb.Models
 {
-    class AtendimentoPaciente
+    public class AtendimentoPaciente
     {
         public string Tipo { get; set;}
         public string Sintomas { get; set; }
