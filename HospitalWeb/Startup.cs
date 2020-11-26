@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Hospital.DAL;
 using Hospital.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,8 +27,9 @@ namespace HospitalWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<Context>(option => option.UseSqlServer(Configuration.GetConnectionString("Connection")));
+            services.AddDbContext<Context>(option => option.UseSqlServer(Configuration.GetConnectionString("Interno")));
             services.AddScoped<Context, Context>();
+            services.AddScoped<PacienteDAO>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

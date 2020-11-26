@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace HospitalWeb.Models
 {
+    [Table("Paciente")]
     public class Paciente
     {
         public int ID { get; set; }
@@ -12,7 +14,7 @@ namespace HospitalWeb.Models
         public string CPF { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-        public string SobreNome { get; set; }
-        public string Celular { get; set; }
+        //public string SobreNome { get; set; }
+        //public string Celular { get; set; }
     }
 }

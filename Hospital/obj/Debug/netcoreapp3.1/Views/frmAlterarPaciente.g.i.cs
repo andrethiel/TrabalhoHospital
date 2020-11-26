@@ -93,7 +93,7 @@ namespace Hospital.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Hospital;component/views/frmalterarpaciente.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Hospital;V1.0.0.0;component/views/frmalterarpaciente.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\frmAlterarPaciente.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

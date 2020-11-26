@@ -101,7 +101,7 @@ namespace Hospital.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Hospital;component/views/frmmedico.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Hospital;V1.0.0.0;component/views/frmmedico.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\frmMedico.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -23,10 +23,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Atendimento" asp-action="Cadastrar">Cadastrar Atendimento</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Atendimento" asp-action="Buscar">Buscar Atendimento</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Paciente" asp-action="Cadastrar">Cadastrar Paciente</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Atendimento" asp-action="Cadastrar">Cadastrar Atendimento</a>
                         </li>
                     </ul>
                 </div>
@@ -47,12 +47,12 @@
     
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @*<script>
+    <script>
         $(document).ready(function () {
             $('#CPF').mask('999.999.999-99');
             $('#Telefone').mask('(99)99999-9999');
         });
-    </script>*@
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
