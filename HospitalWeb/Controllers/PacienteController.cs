@@ -27,6 +27,17 @@ namespace HospitalWeb.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Buscar(string nome)
+        {
+            return View(_pacienteDAO.BuscaPacienteLista(nome));
+        }
+
+        public IActionResult Alterar(int id)
+        {
+            return View(_pacienteDAO.BuscaPacienteID(id));
+        }
+
         [HttpPost]
         public IActionResult Cadastrar(Paciente paciente)
         {
@@ -38,6 +49,12 @@ namespace HospitalWeb.Controllers
             ModelState.AddModelError("", "Paciente já cadastrado");
             return View();
 
+        }
+        [HttpPost]
+        public IActionResult Alterar(Paciente paciente)
+        {
+            _pacienteDAO.AlteraraPaciente(paciente);
+            return RedirectToAction("Buscar", "Paciente");
         }
     }
 }

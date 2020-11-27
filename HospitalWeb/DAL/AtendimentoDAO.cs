@@ -8,16 +8,18 @@ using System.Text;
 
 namespace Hospital.DAL
 {
-    class AtendimentoDAO
+    public class AtendimentoDAO
     {
-        private static Context context;
+        private readonly Context _context;
 
-        public static bool CadastrarAtendimento(Atendimento atendimento)
+        AtendimentoDAO(Context context) => _context = context;
+
+        public bool CadastrarAtendimento(Atendimento atendimento)
         {
             try
             {
-                context.Atendimentos.Add(atendimento);
-                context.SaveChanges();
+                _context.Atendimentos.Add(atendimento);
+                _context.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -26,12 +28,14 @@ namespace Hospital.DAL
             }
 
         }
-        public static List<AtendimentoPaciente> BuscaAtendimento() /*=> context.Atendimentos.ToList();*/
+        public List<AtendimentoPaciente> BuscaAtendimento() /*=> context.Atendimentos.ToList();*/
         {
             //var join = context.AtendimentoPacientes.FromSqlRaw("select a.tipo,a.Sintomas,a.id_paciente p.* from atendimento a, pacientes p where a.id_paciente = p.ID");
-            var join = context.AtendimentoPacientes.FromSqlRaw("select a.tipo,a.Sintomas,a.Id, p.Nome from atendimento a, pacientes p where a.id_paciente = p.ID");
+            var join = _context.AtendimentoPacientes.FromSqlRaw("select a.tipo,a.Sintomas,a.Id, p.Nome from atendimento a, pacientes p where a.id_paciente = p.ID");
 
             return join.ToList();
         }
+
+        public AtendimentoPaciente BuscaPaciente(int id) => _context.AtendimentoPacientes.FirstOrDefault(x => x.PacienteID == id);
     }
 }

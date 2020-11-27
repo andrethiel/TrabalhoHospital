@@ -43,6 +43,12 @@
                                    asp-route-id="@paciente.ID"
                                    class="btn btn-warning">Alterar</a>
                             </td>
+                            <td>
+                                <a asp-action="Cadastrar"
+                                   asp-controller="Atendimento"
+                                   asp-route-id="@paciente.ID"
+                                   class="btn btn-warning">Iniciar Atendimento</a>
+                            </td>
                         </tr>
 
                         }

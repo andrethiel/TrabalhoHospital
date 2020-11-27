@@ -30,6 +30,7 @@ namespace HospitalWeb
             services.AddDbContext<Context>(option => option.UseSqlServer(Configuration.GetConnectionString("Interno")));
             services.AddScoped<Context, Context>();
             services.AddScoped<PacienteDAO>();
+            services.AddScoped<AtendimentoDAO>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

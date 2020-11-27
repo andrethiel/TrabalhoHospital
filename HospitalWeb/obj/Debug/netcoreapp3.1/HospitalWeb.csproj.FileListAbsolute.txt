@@ -166,3 +166,5 @@ G:\Dropbox\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Paci
 G:\Dropbox\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\_ViewStart.cshtml.g.cs
 G:\Dropbox\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\_Layout.cshtml.g.cs
 G:\Dropbox\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\_ViewStart.cshtml.g.cs
+G:\Dropbox\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Buscar.cshtml.g.cs
+G:\Dropbox\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Alterar.cshtml.g.cs
