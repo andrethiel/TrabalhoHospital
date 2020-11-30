@@ -139,7 +139,6 @@ D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.Tag
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.RazorCoreGenerate.cache
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\Buscar.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\Cadastrar.cshtml.g.cs
-D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\Index.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\_Layout.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\_ViewStart.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Medico\Index.cshtml.g.cs
@@ -151,7 +150,6 @@ D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Pac
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\_ViewStart.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\User\Cadastro.cshtml.g.cs
-D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.RazorTargetAssemblyInfo.cache
@@ -161,3 +159,8 @@ D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.csp
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.dll
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.pdb
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.genruntimeconfig.cache
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.csprojAssemblyReference.cache
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\User\_Layout.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\User\_ViewStart.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Atendimento\Index.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs

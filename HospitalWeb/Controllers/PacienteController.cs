@@ -15,8 +15,12 @@ namespace HospitalWeb.Controllers
         public PacienteController(PacienteDAO pacienteDAO) => _pacienteDAO = pacienteDAO;
         public IActionResult Index()
         {
-            
-            return View();
+
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "User");
         }
         public IActionResult Cadastrar()
         {

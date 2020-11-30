@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<User> SignInManager
+@inject Microsoft.AspNetCore.Identity.UserManager<User> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,7 +10,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="~/js/jquery.mask.js"></script>
-    
+
 
 </head>
 <body>
@@ -28,6 +30,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Paciente" asp-action="Buscar">Cadastrar Atendimento</a>
                         </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item active">
+                                <a class="nav-link" asp-action="Logout" asp-controller="User">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item active">
+                                <a class="nav-link" asp-action="Login" asp-controller="User">Login</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -44,7 +58,7 @@
             &copy; 2020 - HospitalWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>

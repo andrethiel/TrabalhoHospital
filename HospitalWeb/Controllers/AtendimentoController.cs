@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HospitalWeb.DAL;
-using HospitalWeb.DAL;
 using HospitalWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +20,11 @@ namespace HospitalWeb.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "User");
         }
         
         public IActionResult Cadastrar(int id)

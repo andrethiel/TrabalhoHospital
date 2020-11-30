@@ -9,7 +9,11 @@ namespace HospitalWeb.Models
     [Table("Atendimento")]
     public class Atendimento
     {
-        public Atendimento() => CriadoEm = DateTime.Now;
+        public Atendimento()
+        {
+            CriadoEm = DateTime.Now;
+            Atendido = "N";
+        }
         [Column("IdAtendimento")]
         public int ID { get; set; }
         public  string Tipo { get; set; }
@@ -17,6 +21,6 @@ namespace HospitalWeb.Models
         public string Sintomas { get; set; }
         public int PacienteID { get; set; }
         public DateTime CriadoEm { get; set; }
-
+        public string Atendido { get; set; }
     }
 }
