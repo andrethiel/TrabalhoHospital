@@ -1,0 +1,46 @@
+﻿@model UserView
+<form asp-action="Cadastrar" asp-controller="User" method="post">
+    <fieldset>
+        <legend>Cadastrar Login</legend>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10">
+                    @if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count > 0)
+                    {
+
+                        <div class="alert alert-danger">
+                            <a class="close" data-dismiss="alert">×</a>
+                            <h5 class="alert-heading">Atenção</h5>
+                            @Html.ValidationSummary(true)
+                        </div>
+
+                    }
+                    <div class="form-group">
+                        <input class="form-control" asp-for="Nome" type="text" placeholder="Nome Completo" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" asp-for="Email" type="email" placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="senha" asp-for="Senha" type="password" placeholder="Senha" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="repitasenha" type="password" placeholder="Repita a senha" />
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" asp-for="Setor">
+                            <option>Setor</option>
+                            <option>Atendente</option>
+                            <option>Medico</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" value="Cadastrar" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

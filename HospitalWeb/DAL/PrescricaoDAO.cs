@@ -1,4 +1,4 @@
-﻿using Hospital.Data;
+﻿using HospitalWeb.Data;
 using HospitalWeb.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hospital.DAL
+namespace HospitalWeb.DAL
 {
     class PrescricaoDAO
     {

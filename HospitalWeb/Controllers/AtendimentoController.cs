@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Hospital.DAL;
+using HospitalWeb.DAL;
+using HospitalWeb.DAL;
+using HospitalWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalWeb.Controllers
@@ -11,19 +13,40 @@ namespace HospitalWeb.Controllers
     {
         private readonly PacienteDAO _pacienteDAO;
         private readonly AtendimentoDAO _atendimento;
-
-        public AtendimentoController(AtendimentoDAO atendimento) => _atendimento = atendimento;
+        public static int PAcienteID;
+        public AtendimentoController(AtendimentoDAO atendimento, PacienteDAO paciente)
+        {
+            _atendimento = atendimento;
+            _pacienteDAO = paciente;
+        }
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult Cadastrar()
+        
+        public IActionResult Cadastrar(int id)
         {
+            
+            if(id == 0)
+            {
+                return RedirectToAction("Buscar","Paciente");
+            }
+            var paciente = _pacienteDAO.BuscaPacienteID(id);
+            PAcienteID = paciente.ID;
+            ViewBag.Nome = paciente.Nome;
             return View();
         }
-        public IActionResult Buscar(int id)
+
+        [HttpPost]
+        public IActionResult Cadastrar(Atendimento atendimento)
         {
-            return View(_atendimento.BuscaPaciente(id));
+            atendimento.PacienteID = PAcienteID;
+            atendimento.ID = 0;
+            if (_atendimento.CadastrarAtendimento(atendimento))
+            {
+                return RedirectToAction("Index", "Atendimento");
+            }
+            return View();
         }
     }
 }

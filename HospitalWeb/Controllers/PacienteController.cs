@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Hospital.DAL;
+using HospitalWeb.DAL;
 using HospitalWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 

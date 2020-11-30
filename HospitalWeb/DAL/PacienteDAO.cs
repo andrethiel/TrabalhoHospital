@@ -1,4 +1,4 @@
-﻿using Hospital.Data;
+﻿using HospitalWeb.Data;
 using HospitalWeb.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Hospital.DAL
+namespace HospitalWeb.DAL
 {
     public class PacienteDAO
     {

@@ -1,13 +1,14 @@
 ﻿using HospitalWeb.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Hospital.Data
+namespace HospitalWeb.Data
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<User>
     {
         public Context(DbContextOptions options) : base(options)
         {
@@ -24,5 +25,7 @@ namespace Hospital.Data
         public DbSet<AtendimentoPaciente> AtendimentoPacientes { get; set; }
 
         public DbSet<Prescricao> Prescricao { get; set; }
+
+        public DbSet<UserView> Usuarios { get; set; }
     }
 }

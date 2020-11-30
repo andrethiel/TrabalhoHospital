@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Hospital.DAL;
-using Hospital.Data;
+using HospitalWeb.DAL;
+using HospitalWeb.Data;
+using HospitalWeb.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,10 +29,18 @@ namespace HospitalWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<Context>(option => option.UseSqlServer(Configuration.GetConnectionString("Interno")));
+            services.AddDbContext<Context>(option => option.UseSqlServer(Configuration.GetConnectionString("Connection")));
             services.AddScoped<Context, Context>();
             services.AddScoped<PacienteDAO>();
             services.AddScoped<AtendimentoDAO>();
+            services.AddHttpContextAccessor();
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
+            services.ConfigureApplicationCookie(option =>
+            {
+                option.LoginPath = "/Login/Index";
+            });
+
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,14 +59,15 @@ namespace HospitalWeb
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Paciente}/{action=Index}/{id?}");
+                    pattern: "{controller=User}/{action=Cadastro}/{id?}");
             });
         }
     }

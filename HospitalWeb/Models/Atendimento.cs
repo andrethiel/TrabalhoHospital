@@ -10,13 +10,12 @@ namespace HospitalWeb.Models
     public class Atendimento
     {
         public Atendimento() => CriadoEm = DateTime.Now;
+        [Column("IdAtendimento")]
         public int ID { get; set; }
-        [Column("id_paciente")]
-        public int? PacienteID { get; set; }
         public  string Tipo { get; set; }
         public string Chegada { get; set; }
         public string Sintomas { get; set; }
-
+        public int PacienteID { get; set; }
         public DateTime CriadoEm { get; set; }
 
     }
