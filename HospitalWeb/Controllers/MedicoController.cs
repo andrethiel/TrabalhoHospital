@@ -8,16 +8,17 @@ using HospitalWeb.DAL;
 namespace HospitalWeb.Controllers
 {
     public class MedicoController : Controller
-    {
-        
+    {       
 
         public IActionResult Index()
         {
-           return View();
+            ViewBag.Atendimentos = _atendimentoDAO.Listar();
+            return View();
         }
 
         public IActionResult Fila()
         {
+            
             return View();
         }
 

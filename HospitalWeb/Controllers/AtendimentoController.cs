@@ -11,17 +11,20 @@ namespace HospitalWeb.Controllers
     public class AtendimentoController : Controller
     {
         private readonly PacienteDAO _pacienteDAO;
-        private readonly AtendimentoDAO _atendimento;
+        private readonly AtendimentoDAO _atendimentoDAO;
         public static int PAcienteID;
         public AtendimentoController(AtendimentoDAO atendimento, PacienteDAO paciente)
         {
-            _atendimento = atendimento;
+            _atendimentoDAO = atendimento;
             _pacienteDAO = paciente;
         }
         public IActionResult Index()
         {
+            
+
             if (User.Identity.IsAuthenticated)
             {
+                
                 return View();
             }
             return RedirectToAction("Index", "User");
@@ -45,7 +48,7 @@ namespace HospitalWeb.Controllers
         {
             atendimento.PacienteID = PAcienteID;
             atendimento.ID = 0;
-            if (_atendimento.CadastrarAtendimento(atendimento))
+            if (_atendimentoDAO.CadastrarAtendimento(atendimento))
             {
                 return RedirectToAction("Index", "Atendimento");
             }

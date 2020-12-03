@@ -11,9 +11,9 @@ namespace HospitalWeb.DAL
     public class AtendimentoDAO
     {
         private readonly Context _context;
-
+        
         public AtendimentoDAO(Context context) => _context = context;
-
+        public List<Atendimento> Listar() => _context.Atendimentos.ToList();
 
         public bool CadastrarAtendimento(Atendimento atendimento)
         {
