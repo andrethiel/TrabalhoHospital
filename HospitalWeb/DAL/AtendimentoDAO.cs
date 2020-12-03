@@ -13,6 +13,8 @@ namespace HospitalWeb.DAL
         private readonly Context _context;
 
         public AtendimentoDAO(Context context) => _context = context;
+
+
         public bool CadastrarAtendimento(Atendimento atendimento)
         {
             try

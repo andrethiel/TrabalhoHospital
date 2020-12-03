@@ -1,0 +1,47 @@
+﻿@{List<Atendimento> atendimentos = ViewBag.atendimentos;}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Fila de Atendimento</title>
+
+</head>
+<body>
+    <h2>Fila de Atendimento</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>ID</th>
+                <th>Tipo </th>
+                <th>Chegada</th>
+                <th>Sintomas</th>
+                <th>PacienteID</th>
+                <th>Criado em</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (Atendimento filadeAtendimento in atendimentos)
+            {
+                <tr>
+                    <td>@filadeAtendimento.ID</td>
+                    <td>@filadeAtendimento.Tipo</td>
+                    <td>@filadeAtendimento.Chegada</td>
+                    <td>@filadeAtendimento.Sintomas</td>
+                    <td>@filadeAtendimento.PacienteID</td>
+                    <td>@filadeAtendimento.CriadoEm</td>
+                    @*asp-route-id passar parametro no link*@
+                    <td><a asp-action="Remover" asp-controller="Produto" asp-route-id="@filadeAtendimento.Id">Remover</a></td>
+                    <td><a asp-action="Alterar" asp-controller="Produto" asp-route-id="@filadeAtendimento.Id">Alterar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+</body>
+</html>

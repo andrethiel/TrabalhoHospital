@@ -23,7 +23,7 @@ namespace HospitalWeb.Data
         public DbSet<Atendimento> Atendimentos { get; set; }
 
         public DbSet<AtendimentoPaciente> AtendimentoPacientes { get; set; }
-
+       
         public DbSet<Prescricao> Prescricao { get; set; }
 
         public DbSet<UserView> Usuarios { get; set; }
