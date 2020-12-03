@@ -1,1 +1,47 @@
-﻿
+﻿@model List<Atendimento>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Fila de Atendimento</title>
+
+</head>
+<body>
+    <h2>Fila de Atendimento</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>ID</th>
+                <th>Tipo </th>
+                <th>Chegada</th>
+                <th>Sintomas</th>
+                <th>PacienteID</th>
+                <th>Criado em</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (Atendimento filadeAtendimento in Model)
+            {
+                <tr>
+                    <td>@filadeAtendimento.ID</td>
+                    <td>@filadeAtendimento.Tipo</td>
+                    <td>@filadeAtendimento.Chegada</td>
+                    <td>@filadeAtendimento.Sintomas</td>
+                    <td>@filadeAtendimento.PacienteID</td>
+                    <td>@filadeAtendimento.CriadoEm</td>
+                    @*asp-route-id passar parametro no link*@
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+</body>
+</html>

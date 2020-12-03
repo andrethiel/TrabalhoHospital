@@ -333,3 +333,5 @@ D:\repositorios\VendasWeb\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\R
 D:\repositorios\VendasWeb\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Medico\Fila.cshtml.g.cs
 D:\repositorios\VendasWeb\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.csproj.CoreCompileInputs.cache
 D:\repositorios\VendasWeb\TrabalhoHospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Medico\_Layout.cshtml.g.cs
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\Razor\Views\Medico\_ViewStart.cshtml.g.cs
