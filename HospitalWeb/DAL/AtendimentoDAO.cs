@@ -14,6 +14,7 @@ namespace HospitalWeb.DAL
         
         public AtendimentoDAO(Context context) => _context = context;
         public List<Atendimento> Listar() => _context.Atendimentos.ToList();
+        public Atendimento BuscarPorId(int id) => _context.Atendimentos.Find(id);
 
         public bool CadastrarAtendimento(Atendimento atendimento)
         {
@@ -23,10 +24,17 @@ namespace HospitalWeb.DAL
                 _context.SaveChanges();
                 return true;
             }
+
+            
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+        public void Atualizar(Atendimento atendimento)
+        {
+            _context.Atendimentos.Update(atendimento);
+            _context.SaveChanges();
         }
     }
 }

@@ -54,5 +54,28 @@ namespace HospitalWeb.Controllers
             }
             return View();
         }
+
+        public IActionResult Atender(int Id)
+        {
+            ViewBag.atendimento = _atendimentoDAO.BuscarPorId(Id);
+
+            return View();
+
+        }
+        [HttpPost]
+         public IActionResult Atender(String Tipo,int Id)
+         {
+             Atendimento atendimento = _atendimentoDAO.BuscarPorId(Id);
+             atendimento.Tipo = Tipo;
+             
+
+             _atendimentoDAO.Atualizar(atendimento);
+             return RedirectToAction("Index");
+         }
+        public IActionResult CriarPrescricao ()
+        {
+            return View();
+        }
+
     }
 }

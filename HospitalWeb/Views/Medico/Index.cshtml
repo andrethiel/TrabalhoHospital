@@ -12,12 +12,10 @@
     <table class="table">
         <thead>
             <tr>
-                <th>#</th>
                 <th>ID</th>
                 <th>Tipo </th>
                 <th>Chegada</th>
                 <th>Sintomas</th>
-                <th>PacienteID</th>
                 <th>Criado em</th>
 
             </tr>
@@ -26,16 +24,15 @@
         <tbody>
             @foreach (Atendimento filadeAtendimento in Model)
             {
-                <tr>
-                    <td>@filadeAtendimento.ID</td>
-                    <td>@filadeAtendimento.Tipo</td>
-                    <td>@filadeAtendimento.Chegada</td>
-                    <td>@filadeAtendimento.Sintomas</td>
-                    <td>@filadeAtendimento.PacienteID</td>
-                    <td>@filadeAtendimento.CriadoEm</td>
-                    @*asp-route-id passar parametro no link*@
+            <tr>
+                <td>@filadeAtendimento.ID</td>
+                <td>@filadeAtendimento.Tipo</td>
+                <td>@filadeAtendimento.Chegada</td>
+                <td>@filadeAtendimento.Sintomas</td>
+                <td>@filadeAtendimento.CriadoEm</td>
+                <td><a asp-action="Atender" asp-controller="Atendimento" asp-route-id="@filadeAtendimento.ID">Atender</a></td>
 
-                </tr>
+            </tr>
             }
         </tbody>
     </table>

@@ -1,0 +1,39 @@
+﻿@model List<Atendimento>
+
+
+@{
+
+    Atendimento atendimento = ViewBag.atendimento;
+    Paciente paciente = ViewBag.paciente;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Atendimento de paciente</title>
+</head>
+<body>
+    <form asp-action="CriarPrescricao" asp-controller="Atendimento" method="post">
+        <fieldset>
+           
+
+            <legend>Dados do Atendimento</legend>
+            <label>Tipo:</label>
+            <input readonly value="@atendimento.Tipo" name="Tipo" type="text" placeholder="Tipo:" />
+            <br />
+            <label>Chegada:</label>
+            <input readonly value="@atendimento.Chegada" name="Chegada" type="text" placeholder="Chegada:" />
+            <br />
+            <label>Sintomas:</label>
+            <input readonly value="@atendimento.Sintomas" name="Sintomas" type="text" placeholder="Sintomas" />
+            <br />
+
+
+            <input type="submit" value="Criar Prescrição" />
+        </fieldset>
+    </form>
+
+</body>
+</html>
