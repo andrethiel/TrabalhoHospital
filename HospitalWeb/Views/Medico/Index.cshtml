@@ -1,4 +1,4 @@
-﻿@model List<Atendimento>
+﻿@model List<AtendimentoPaciente>
 
 <!DOCTYPE html>
 
@@ -12,25 +12,25 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Nome</th>
                 <th>Tipo </th>
                 <th>Chegada</th>
                 <th>Sintomas</th>
-                <th>Criado em</th>
+                <th>Hora do Atendimento</th>
 
             </tr>
 
         </thead>
         <tbody>
-            @foreach (Atendimento filadeAtendimento in Model)
+            @foreach (AtendimentoPaciente filadeAtendimento in Model)
             {
             <tr>
-                <td>@filadeAtendimento.ID</td>
+                <td>@filadeAtendimento.Nome</td>
                 <td>@filadeAtendimento.Tipo</td>
                 <td>@filadeAtendimento.Chegada</td>
                 <td>@filadeAtendimento.Sintomas</td>
                 <td>@filadeAtendimento.CriadoEm</td>
-                <td><a asp-action="Atender" asp-controller="Atendimento" asp-route-id="@filadeAtendimento.ID">Atender</a></td>
+                <td><a asp-action="Cadastrar" asp-controller="Medico" asp-route-id="@filadeAtendimento.ID">Atender</a></td>
 
             </tr>
             }

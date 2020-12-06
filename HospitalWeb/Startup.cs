@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using HospitalWeb.DAL;
 using HospitalWeb.Data;
 using HospitalWeb.Models;
+using HospitalWeb.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,7 @@ namespace HospitalWeb
             services.AddScoped<Context, Context>();
             services.AddScoped<PacienteDAO>();
             services.AddScoped<AtendimentoDAO>();
+            services.AddScoped<SenhaMD5>();
             services.AddHttpContextAccessor();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
             services.ConfigureApplicationCookie(option =>
@@ -67,7 +69,7 @@ namespace HospitalWeb
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Medico}/{action=Index}/{id?}");
+                    pattern: "{controller=User}/{action=Index}/{id?}");
             });
         }
     }

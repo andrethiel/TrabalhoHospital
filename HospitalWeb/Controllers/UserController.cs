@@ -1,5 +1,7 @@
-﻿using HospitalWeb.Data;
+﻿using HospitalWeb.DAL;
+using HospitalWeb.Data;
 using HospitalWeb.Models;
+using HospitalWeb.Utils;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,12 +16,14 @@ namespace HospitalWeb.Controllers
         private readonly Context _context;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        public readonly SenhaMD5 _senhas;
         public UserController(Context context, UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            SignInManager<User> signInManager, SenhaMD5 senhas)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
+            _senhas = senhas;
         }
         public IActionResult Index()
         {
@@ -41,7 +45,7 @@ namespace HospitalWeb.Controllers
                     UserName = userView.Email,
                     Email = userView.Email
                 };
-
+                //string senha = _senhas.GerarMD5(userView.Senha);
                 IdentityResult resultado = await _userManager.CreateAsync(user, userView.Senha);
                 if (resultado.Succeeded)
                 {
@@ -66,10 +70,19 @@ namespace HospitalWeb.Controllers
         {
             var result = await _signInManager.PasswordSignInAsync(userView.Email, userView.Senha, false, false);
 
-            var nome = User.Identity.Name;
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Atendimento");
+
+                var usuario = _context.Usuarios.FirstOrDefault(p => p.Email == userView.Email);
+                if (usuario.Setor == "Atendente")
+                {
+                    return RedirectToAction("Index", "Atendimento");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Medico");
+                }
+
             }
             ModelState.AddModelError("", "Login ou senha inválidos!");
             return View();
