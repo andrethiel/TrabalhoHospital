@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HospitalWeb.DAL;
 using HospitalWeb.Data;
+using HospitalWeb.Models;
 
 namespace HospitalWeb.Controllers
 {
@@ -12,11 +13,15 @@ namespace HospitalWeb.Controllers
     {
         private readonly AtendimentoDAO _atendimentoDAO;
         private readonly PacienteDAO _paciente;
+        private readonly PrescricaoDAO _prescricao;
+        public static String TextoPrescricao;
 
-        public MedicoController(AtendimentoDAO atendimento, PacienteDAO paciente) 
+        public MedicoController(AtendimentoDAO atendimento, PacienteDAO paciente , PrescricaoDAO prescricao) 
         {
             _atendimentoDAO = atendimento;
             _paciente = paciente;
+            _prescricao = prescricao;
+            
         } 
 
         public IActionResult Index()
@@ -30,13 +35,20 @@ namespace HospitalWeb.Controllers
             var nome = _paciente.BuscaPacienteID(IdPaciente.PacienteID);
             ViewBag.atendimento = _atendimentoDAO.BuscarPorId(id);
             ViewBag.Nome = nome.Nome;
+
             return View();
         }
-
-        //[HttpPost]
-        //public IActionResult Cadastrar()
-        //{
+        [HttpPost]
+        public IActionResult Prescricao(Prescricao prescricao) 
+        {
+            prescricao.TextoPrescricao = TextoPrescricao;
+            if (_prescricao.CadastroPrescricao(prescricao))
+            {
+                return RedirectToAction("prescricao");
+            }
+            return View();
             
-        //}
+        }
+      
     }
 }

@@ -3,7 +3,7 @@
 @{ 
     Atendimento atendimento = ViewBag.atendimento;
 }
-<form asp-action="Cadastrar" asp-controller="Medico" method="post">
+<form asp-action="Prescricao" asp-controller="Medico" method="post">
     <fieldset>
         <legend>Cadastrar Prescrição</legend>
         <div class="container">
@@ -36,6 +36,7 @@
                         <textarea asp-for="TextoPrescricao" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
+                
                 <div class="col-sm-4">
                     <div class="form-group">
                         <input class="btn btn-primary" type="submit" value="Cadastrar" />

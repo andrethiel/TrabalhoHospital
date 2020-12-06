@@ -10,7 +10,7 @@ namespace HospitalWeb.DAL
 {
     class PrescricaoDAO
     {
-        private static Context context;
+        private static  Context context;
         public static List<Prescricao> BuscaPrescricaoAtendimento(int ID) => context.Prescricao.Where(p => p.AtendimentoID == ID).ToList();
 
         public static bool CadastroPrescricao(Prescricao prescricao)
