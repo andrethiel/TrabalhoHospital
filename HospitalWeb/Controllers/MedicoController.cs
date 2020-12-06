@@ -39,9 +39,10 @@ namespace HospitalWeb.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Prescricao(Prescricao prescricao) 
+        public IActionResult Prescricao(Prescricao prescricao,Atendimento atendimento) 
         {
             prescricao.TextoPrescricao = TextoPrescricao;
+            atendimento.Atendido = "S";
             if (_prescricao.CadastroPrescricao(prescricao))
             {
                 return RedirectToAction("prescricao");
