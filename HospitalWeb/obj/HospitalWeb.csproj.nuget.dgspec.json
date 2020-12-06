@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {}
+    "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj": {}
   },
   "projects": {
-    "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {
+    "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
+        "projectUniqueName": "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj",
         "projectName": "HospitalWeb",
-        "projectPath": "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
-        "packagesPath": "C:\\Users\\kmluc\\.nuget\\packages\\",
-        "outputPath": "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\obj\\",
+        "projectPath": "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj",
+        "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\kmluc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -65,10 +70,6 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
-            },
-            "SharePointPnPCoreOnline": {
-              "target": "Package",
-              "version": "[3.27.2011, )"
             }
           },
           "imports": [
@@ -89,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

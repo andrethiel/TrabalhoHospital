@@ -14,14 +14,12 @@ namespace HospitalWeb.Controllers
         private readonly AtendimentoDAO _atendimentoDAO;
         private readonly PacienteDAO _paciente;
         private readonly PrescricaoDAO _prescricao;
-        public static String TextoPrescricao;
 
-        public MedicoController(AtendimentoDAO atendimento, PacienteDAO paciente , PrescricaoDAO prescricao) 
+        public MedicoController(AtendimentoDAO atendimento, PacienteDAO paciente, PrescricaoDAO prescricao) 
         {
             _atendimentoDAO = atendimento;
             _paciente = paciente;
             _prescricao = prescricao;
-            
         } 
 
         public IActionResult Index()
@@ -39,10 +37,8 @@ namespace HospitalWeb.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Prescricao(Prescricao prescricao,Atendimento atendimento) 
+        public IActionResult Prescricao(Prescricao prescricao) 
         {
-            prescricao.TextoPrescricao = TextoPrescricao;
-            atendimento.Atendido = "S";
             if (_prescricao.CadastroPrescricao(prescricao))
             {
                 return RedirectToAction("prescricao");

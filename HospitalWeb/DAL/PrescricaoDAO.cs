@@ -8,12 +8,12 @@ using System.Text;
 
 namespace HospitalWeb.DAL
 {
-    class PrescricaoDAO
+    public class PrescricaoDAO
     {
         private static  Context context;
         public static List<Prescricao> BuscaPrescricaoAtendimento(int ID) => context.Prescricao.Where(p => p.AtendimentoID == ID).ToList();
 
-        public static bool CadastroPrescricao(Prescricao prescricao)
+        public bool CadastroPrescricao(Prescricao prescricao)
         {
             context.Prescricao.Add(prescricao);
             context.SaveChanges();
