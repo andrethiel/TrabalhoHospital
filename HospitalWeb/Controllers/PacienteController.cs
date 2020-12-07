@@ -11,8 +11,13 @@ namespace HospitalWeb.Controllers
     public class PacienteController : Controller
     {
         private readonly PacienteDAO _pacienteDAO;
+        
 
-        public PacienteController(PacienteDAO pacienteDAO) => _pacienteDAO = pacienteDAO;
+        public PacienteController(PacienteDAO pacienteDAO)
+        {
+            _pacienteDAO = pacienteDAO;
+            
+        }
         public IActionResult Index()
         {
 
@@ -60,5 +65,7 @@ namespace HospitalWeb.Controllers
             _pacienteDAO.AlteraraPaciente(paciente);
             return RedirectToAction("Buscar", "Paciente");
         }
+       
+
     }
 }

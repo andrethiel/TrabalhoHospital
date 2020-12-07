@@ -34,6 +34,7 @@ namespace HospitalWeb
             services.AddScoped<Context, Context>();
             services.AddScoped<PacienteDAO>();
             services.AddScoped<AtendimentoDAO>();
+            services.AddScoped<PrescricaoDAO>();
             services.AddScoped<SenhaMD5>();
             services.AddHttpContextAccessor();
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
