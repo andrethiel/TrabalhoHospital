@@ -5,35 +5,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalWeb.DAL
 {
     public class PrescricaoDAO
     {
-        private static  Context context;
-        public static List<Prescricao> BuscaPrescricaoAtendimento(int ID) => context.Prescricao.Where(p => p.AtendimentoID == ID).ToList();
+        private readonly Context _context;
+        public PrescricaoDAO(Context context) => _context = context;
+        public List<Prescricao> BuscaPrescricaoAtendimento(int ID) => _context.Prescricao.Where(p => p.AtendimentoID == ID).ToList();
 
         public bool CadastroPrescricao(Prescricao prescricao)
         {
-            context.Prescricao.Add(prescricao);
-            context.SaveChanges();
+            _context.Prescricao.Add(prescricao);
+            _context.SaveChanges();
             return false;
         }
 
-        public static Prescricao BuscarPrescricao(int id) => context.Prescricao.FirstOrDefault(p => p.ID == id);
+        public List<Prescricao> BuscarPrescricao(int id) => _context.Prescricao.Where(p => p.ID == id).ToList();
+       
 
-        public static void Remover(int id)
-        {
-            context.Prescricao.Remove(context.Prescricao.Find(id));
-            context.SaveChanges();
-        }
 
-        public static bool AlterarPrescricao(string alterada, int id)
-        {
-            var pres = context.Prescricao.Find(id);
-            pres.TextoPrescricao = alterada;
-            context.SaveChanges();
-            return true;
-        }
+
     }
 }
