@@ -39,5 +39,12 @@ namespace HospitalWeb.DAL
             _context.Atendimentos.Update(atendimento);
             _context.SaveChanges();
         }
+
+        public void AtualizaAtendimento(int id)
+        {
+            var atendimento = BuscarPorId(id);
+            atendimento.Atendido = "S";
+            _context.SaveChanges();
+        }
     }
 }
