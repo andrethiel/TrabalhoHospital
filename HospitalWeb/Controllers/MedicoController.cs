@@ -49,8 +49,7 @@ namespace HospitalWeb.Controllers
         {
             prescricao.AtendimentoID = ATendimentoID;
             prescricao.ID = 0;
-            int a =prescricao.ID;
-            ViewBag.id = a;
+            
             if (_prescricao.CadastroPrescricao(prescricao))
             {
                 
@@ -60,16 +59,15 @@ namespace HospitalWeb.Controllers
             return View();
 
         }
+        
+        [HttpGet]
         public IActionResult Listar()
         {
-            return View();
+            
+            return View(_prescricao.ListarPrescricao());
         }
-        [HttpGet]
-        public IActionResult Listar(String ID)
-        {
-            int a = Convert.ToInt32(ID);
-            return View(_prescricao.BuscarPrescricao(a));
-        }
+        
+
 
     }
 }

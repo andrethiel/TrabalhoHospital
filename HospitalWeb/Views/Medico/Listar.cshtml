@@ -1,48 +1,43 @@
 ﻿@model List<Prescricao>
 
 
-<form asp-action="Listar" asp-controller="Medico" method="get">
-    <fieldset>
-        <legend>Buscar Prescricao</legend>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-10">
-                    <div class="form-group">
-                        <input class="form-control" name="ID" type="text" placeholder="ID da prescricao" />
-                    </div>
-                </div>
 
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <input class="btn btn-primary" type="submit" value="Buscar" />
-                    </div>
-                </div>
-            </div>
+<html>
+<head>
+    <title>Lista de prescrições</title>
 
-            <div class="col-sm-6">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Prescrição</th>
-                            <th>AtendimentoID</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (Prescricao listaPrescricao in Model)
-                        {
-                            <tr>
-                                <td>@listaPrescricao.ID</td>
-                                <td>@listaPrescricao.TextoPrescricao</td>
-                                <td>@listaPrescricao.AtendimentoID</td>
-                                                         
-                            </tr>
-                        }
+</head>
+<body>
+    <h2>Lista de prescrições</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Prescricao </th>
+                <th>AtendimentoID</th>
+                
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </fieldset>
-</form>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (Prescricao listaprescricao in Model)
+            {
+            <tr>
+                <td>@listaprescricao.ID</td>
+                <td>@listaprescricao.TextoPrescricao</td>
+                <td>@listaprescricao.AtendimentoID</td>
+
+                
+
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+</body>
+</html>
+
