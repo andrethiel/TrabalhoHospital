@@ -1,9 +1,16 @@
-﻿<body>
-    <h2>Prescrição criada com sucesso</h2>
+﻿@model Prescricao
+@{
+    int id = ViewBag.id;
+}
 
-   
+<body>
+    <h2>Prescrição criada com sucesso , ID do atendimento é</h2>
+    <div class="form-group">
+        <input class="form-control" value="@id" type="text" readonly />
+    </div>
 
-        
-        <a class="btn btn-primary" asp-controller="Medico" asp-action="Index">Voltar aos atendimentos</a>
+
+
+    <a class="btn btn-primary" asp-controller="Medico" asp-action="Index">Voltar aos atendimentos</a>
 
 </body>

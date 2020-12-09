@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {}
+    "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {}
   },
   "projects": {
-    "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {
+    "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
+        "projectUniqueName": "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
         "projectName": "HospitalWeb",
-        "projectPath": "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
-        "packagesPath": "C:\\Users\\andre.ti\\.nuget\\packages\\",
-        "outputPath": "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\obj\\",
+        "projectPath": "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
+        "packagesPath": "C:\\Users\\kmluc\\.nuget\\packages\\",
+        "outputPath": "D:\\repositorios\\VendasWeb\\TrabalhoHospital\\HospitalWeb\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\andre.ti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kmluc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

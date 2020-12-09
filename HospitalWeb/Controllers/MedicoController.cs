@@ -49,6 +49,8 @@ namespace HospitalWeb.Controllers
         {
             prescricao.AtendimentoID = ATendimentoID;
             prescricao.ID = 0;
+            int a =prescricao.ID;
+            ViewBag.id = a;
             if (_prescricao.CadastroPrescricao(prescricao))
             {
                 
