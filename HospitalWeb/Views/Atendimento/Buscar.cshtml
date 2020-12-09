@@ -6,51 +6,38 @@
         <legend>Lista de atendimentos</legend>
         <div class="container">
             <div class="row">
-                <div class="col-sm-10">
-                    @if(ViewBag.Message =="")
-                    {
-
-                        <div class="alert alert-danger">
-                            <a class="close" data-dismiss="alert">×</a>
-                            <h5 class="alert-heading">Atenção</h5>
-                            @Html.ValidationSummary(true)
-                        </div>
-
-                    }
-                    <div class="col-sm-6">
-                        <table class="table">
-                            <thead>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Chagada</th>
+                                <th>TIpo</th>
+                                <th>Atendido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (AtendimentoPaciente atendimento in Model)
+                            {
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>CPF</th>
-                                    <th>Email</th>
-                                    <th>Telefone</th>
+                                    <td>@atendimento.Nome</td>
+                                    <td>@atendimento.Chegada </td>
+                                    <td>@atendimento.Tipo</td>
+                                    <td>@atendimento.Atendido</td>
+                                    <td>
+                                        <a asp-action="Remover"
+                                           asp-controller="Atendimento"
+                                           asp-route-id="@atendimento.ID"
+                                           class="btn btn-warning">Remover</a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (AtendimentoPaciente atendimento in Model)
-                                {
-                                    <tr>
-                                        <td>@atendimento.Nome</td>
-                                        <td>@atendimento.Chegada </td>
-                                        <td>@atendimento.Tipo</td>
-                                        <td>@atendimento.Atendido</td>
-                                        <td>
-                                            <a asp-action="Remover"
-                                               asp-controller="Atendimento"
-                                               asp-route-id="@atendimento.ID"
-                                               class="btn btn-warning">Remover</a>
-                                        </td>
-                                    </tr>
 
-                                }
+                            }
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-
     </fieldset>
 </form>

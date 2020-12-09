@@ -17,11 +17,10 @@ namespace HospitalWeb.DAL
         public List<AtendimentoPaciente> Listar() => _context.AtendimentoPacientes.FromSqlRaw("select p.Nome, a.* from Paciente p, Atendimento a where p.ID = a.PacienteID").ToList();
         public Atendimento BuscarPorId(int id) => _context.Atendimentos.Find(id);
 
-        public bool RemoveAtendimento(int id)
+        public void RemoveAtendimento(int id)
         {
             _context.Atendimentos.Remove(_context.Atendimentos.Find(id));
             _context.SaveChanges();
-            return true;
         }
         public List<AtendimentoPaciente> ListarAtendimentos() => _context.AtendimentoPacientes.FromSqlRaw("select p.Nome, a.* from Paciente p, Atendimento a where p.ID = a.PacienteID and Atendido = 'N'").ToList();
 

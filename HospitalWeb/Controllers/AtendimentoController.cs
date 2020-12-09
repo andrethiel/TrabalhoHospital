@@ -42,6 +42,7 @@ namespace HospitalWeb.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Cadastrar(Atendimento atendimento)
         {
             atendimento.PacienteID = PAcienteID;
@@ -56,15 +57,12 @@ namespace HospitalWeb.Controllers
         public IActionResult Remover(int id)
         {
             var atendimento = _atendimentoDAO.BuscarPorId(id);
-            if(atendimento.Atendido == "S")
+            if(atendimento.Atendido != "S")
             {
-                ViewBag.Message = "okokoko";
-            }else if (_atendimentoDAO.RemoveAtendimento(id))
-            {
-                return RedirectToAction("Index", "Atendimento");
+                _atendimentoDAO.RemoveAtendimento(id);
+                return RedirectToAction(nameof(Buscar));
             }
-            ModelState.AddModelError("", "Paciente já cadastrado");
-            return "";
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Buscar()

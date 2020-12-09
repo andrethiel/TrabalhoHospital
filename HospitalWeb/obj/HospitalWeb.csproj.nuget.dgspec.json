@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj": {}
+    "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj": {
+    "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj",
+        "projectUniqueName": "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
         "projectName": "HospitalWeb",
-        "projectPath": "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\HospitalWeb.csproj",
-        "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\GitHub\\Hospital\\HospitalWeb\\obj\\",
+        "projectPath": "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\HospitalWeb.csproj",
+        "packagesPath": "C:\\Users\\andre.ti\\.nuget\\packages\\",
+        "outputPath": "G:\\Dropbox\\TrabalhoHospital\\HospitalWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre.ti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,7 +40,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -90,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
