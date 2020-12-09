@@ -26,7 +26,12 @@ namespace HospitalWeb.Controllers
 
         public IActionResult Index()
         {
-            return View(_atendimentoDAO.ListarAtendimentos());
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(_atendimentoDAO.ListarAtendimentos());
+            }
+            return RedirectToAction("Index", "User");
+           
         }
 
         public IActionResult Cadastrar(int id)

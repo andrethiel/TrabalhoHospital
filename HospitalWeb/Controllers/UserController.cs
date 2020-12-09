@@ -76,9 +76,9 @@ namespace HospitalWeb.Controllers
                 var usuario = _context.Usuarios.FirstOrDefault(p => p.Email == userView.Email);
                 if (usuario.Setor == "Atendente")
                 {
-                    return RedirectToAction("Index", "Atendimento");
+                    return RedirectToAction("Index", "Paciente");
                 }
-                else
+                else if (usuario.Setor == "Medico")
                 {
                     return RedirectToAction("Index", "Medico");
                 }

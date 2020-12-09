@@ -70,7 +70,7 @@ namespace HospitalWeb
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=User}/{action=Index}/{id?}");
+                    pattern: "{controller=Atendimento}/{action=Index}/{id?}");
             });
         }
     }

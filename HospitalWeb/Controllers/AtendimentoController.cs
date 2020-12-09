@@ -20,22 +20,20 @@ namespace HospitalWeb.Controllers
         }
         public IActionResult Index()
         {
-            
-
             if (User.Identity.IsAuthenticated)
             {
-                
+
                 return View();
             }
             return RedirectToAction("Index", "User");
         }
-        
+
         public IActionResult Cadastrar(int id)
         {
-            
-            if(id == 0)
+
+            if (id == 0)
             {
-                return RedirectToAction("Buscar","Paciente");
+                return RedirectToAction("Buscar", "Paciente");
             }
             var paciente = _pacienteDAO.BuscaPacienteID(id);
             PAcienteID = paciente.ID;
@@ -53,7 +51,25 @@ namespace HospitalWeb.Controllers
                 return RedirectToAction("Index", "Atendimento");
             }
             return View();
-        } 
+        }
 
+        public IActionResult Remover(int id)
+        {
+            var atendimento = _atendimentoDAO.BuscarPorId(id);
+            if(atendimento.Atendido == "S")
+            {
+                ViewBag.Message = "okokoko";
+            }else if (_atendimentoDAO.RemoveAtendimento(id))
+            {
+                return RedirectToAction("Index", "Atendimento");
+            }
+            ModelState.AddModelError("", "Paciente já cadastrado");
+            return "";
+        }
+
+        public IActionResult Buscar()
+        {
+            return View(_atendimentoDAO.Listar());
+        }
     }
 }

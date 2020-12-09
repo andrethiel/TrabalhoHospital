@@ -30,9 +30,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Paciente" asp-action="Cadastrar">Cadastrar Paciente</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Medico" asp-action="Listar">Prescrições</a>
-                        </li>
+
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item active">
@@ -68,6 +66,7 @@
         $(document).ready(function () {
             $('#CPF').mask('999.999.999-99');
             $('#Telefone').mask('(99)99999-9999');
+            $('#cep').mask('99999-999');
         });
     </script>
     @RenderSection("Scripts", required: false)

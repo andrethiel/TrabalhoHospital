@@ -14,9 +14,15 @@ namespace HospitalWeb.DAL
         private readonly Context _context;
 
         public AtendimentoDAO(Context context) => _context = context;
-        public List<Atendimento> Listar() => _context.Atendimentos.ToList();
+        public List<AtendimentoPaciente> Listar() => _context.AtendimentoPacientes.FromSqlRaw("select p.Nome, a.* from Paciente p, Atendimento a where p.ID = a.PacienteID").ToList();
         public Atendimento BuscarPorId(int id) => _context.Atendimentos.Find(id);
 
+        public bool RemoveAtendimento(int id)
+        {
+            _context.Atendimentos.Remove(_context.Atendimentos.Find(id));
+            _context.SaveChanges();
+            return true;
+        }
         public List<AtendimentoPaciente> ListarAtendimentos() => _context.AtendimentoPacientes.FromSqlRaw("select p.Nome, a.* from Paciente p, Atendimento a where p.ID = a.PacienteID and Atendido = 'N'").ToList();
 
         public bool CadastrarAtendimento(Atendimento atendimento)

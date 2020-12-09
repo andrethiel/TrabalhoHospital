@@ -339,3 +339,4 @@ D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.csp
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.dll
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.pdb
 D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.genruntimeconfig.cache
+D:\Documents\GitHub\Hospital\HospitalWeb\obj\Debug\netcoreapp3.1\HospitalWeb.csprojAssemblyReference.cache

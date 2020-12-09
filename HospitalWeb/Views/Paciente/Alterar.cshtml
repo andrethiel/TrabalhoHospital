@@ -15,10 +15,10 @@
                         </div>
 
                     }
-                <div class="form-group">
-                    <input class="form-control" asp-for="Nome" type="text" placeholder="Nome do Paciente" />
-                    <input asp-for="ID" name="HdnId" type="hidden" />
-                </div>
+                    <div class="form-group">
+                        <input class="form-control" asp-for="Nome" type="text" placeholder="Nome do Paciente" />
+                        <input asp-for="ID" name="HdnId" type="hidden" />
+                    </div>
                     <div class="form-group">
                         <input class="form-control" asp-for="CPF" type="text" placeholder="CPF" />
                     </div>
@@ -28,13 +28,56 @@
                     <div class="form-group">
                         <input class="form-control" asp-for="Telefone" type="text" placeholder="Telefone Celular" />
                     </div>
-                </div>
-                <div class="col-sm-4">
                     <div class="form-group">
-                        <input class="btn btn-primary" type="submit" value="Cadastrar" />
+                        <input asp-for="Cep" id="cep" class="form-control" placeholder="CEP" />
+                    </div>
+                    <div class="form-group">
+                        <button type="button" onclick="BuscarCep()" class="btn btn-primary">Buscar CEP</button>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Uf" readonly id="uf" class="form-control" placeholder="Estado" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Cidade" readonly id="cidade" class="form-control" placeholder="Cidade" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Bairro" readonly id="bairro" class="form-control" placeholder="Bairro" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="TipoLogradouro" readonly id="tipoLogradouro" class="form-control" placeholder="Logradouro" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Logradouro" readonly id="logradouro" class="form-control" placeholder="Rua" />
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" value="Alterar" />
                     </div>
                 </div>
             </div>
         </div>
     </fieldset>
 </form>
+<script>
+    var txtCep = document.getElementById("cep");
+    var txtUf = document.getElementById("uf");
+    var txtCidade = document.getElementById("cidade");
+    var txtBairro = document.getElementById("bairro");
+    var txtTipoLogradouro = document.getElementById("tipoLogradouro");
+    var txtLogradouro = document.getElementById("logradouro");
+
+    function BuscarCep() {
+        var url = "https://republicavirtual.com.br/web_cep.php?cep=" + txtCep.value.replace('-', '') + "&formato=json";
+
+        fetch(url, { method: "GET" })
+            .then(response => response.json())
+            .then(json => {
+                txtBairro.value = json.bairro;
+                txtCidade.value = json.cidade;
+                txtUf.value = json.uf;
+                txtTipoLogradouro.value = json.tipo_logradouro;
+                txtLogradouro.value = json.logradouro;
+            })
+            .catch(error => console.log(error));
+    }
+</script>
+

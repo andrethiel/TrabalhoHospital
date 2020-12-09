@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <table class="table">
                     <thead>
                         <tr>
@@ -27,29 +27,44 @@
                             <th>CPF</th>
                             <th>Email</th>
                             <th>Telefone</th>
+                            <th>Bairro</th>
+                            <th>Cep</th>
+                            <th>Cidade</th>
+                            <th>Rua</th>
+                            <th>Logradouro</th>
+                            <th>Cidade</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (Paciente paciente in Model)
                         {
-                        <tr>
-                            <td>@paciente.Nome</td>
-                            <td>@paciente.CPF</td>
-                            <td>@paciente.Email</td>
-                            <td>@paciente.Telefone</td>
-                            <td>
-                                <a asp-action="Alterar"
-                                   asp-controller="Paciente"
-                                   asp-route-id="@paciente.ID"
-                                   class="btn btn-warning">Alterar</a>
-                            </td>
-                            <td>
-                                <a asp-action="Cadastrar"
-                                   asp-controller="Atendimento"
-                                   asp-route-id="@paciente.ID"
-                                   class="btn btn-warning">Iniciar Atendimento</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>@paciente.Nome</td>
+                                <td>@paciente.CPF</td>
+                                <td>@paciente.Email</td>
+                                <td>@paciente.Telefone</td>
+                                <td>@paciente.Bairro</td>
+                                <td>@paciente.Cep</td>
+                                <td>@paciente.Cidade</td>
+                                <td>@paciente.Logradouro</td>
+
+                                <td>@paciente.TipoLogradouro</td>
+
+                                <td>@paciente.Uf</td>
+
+                                <td>
+                                    <a asp-action="Alterar"
+                                       asp-controller="Paciente"
+                                       asp-route-id="@paciente.ID"
+                                       class="btn btn-warning">Alterar</a>
+                                </td>
+                                <td>
+                                    <a asp-action="Cadastrar"
+                                       asp-controller="Atendimento"
+                                       asp-route-id="@paciente.ID"
+                                       class="btn btn-warning">Iniciar Atendimento</a>
+                                </td>
+                            </tr>
                         }
 
                     </tbody>
