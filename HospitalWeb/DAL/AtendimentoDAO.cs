@@ -22,7 +22,7 @@ namespace HospitalWeb.DAL
             _context.Atendimentos.Remove(_context.Atendimentos.Find(id));
             _context.SaveChanges();
         }
-        public List<AtendimentoPaciente> ListarAtendimentos() => _context.AtendimentoPacientes.FromSqlRaw("select p.Nome, a.* from Paciente p, Atendimento a where p.ID = a.PacienteID and Atendido = 'N'").ToList();
+        public List<AtendimentoPaciente> ListarAtendimentos() => _context.AtendimentoPacientes.FromSqlRaw("select p.Nome, a.* from Paciente p, Atendimento a where p.ID = a.PacienteID and Atendido = 'N' order by Tipo desc, criadoem").ToList();
 
         public bool CadastrarAtendimento(Atendimento atendimento)
         {
