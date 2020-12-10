@@ -33,7 +33,7 @@ namespace HospitalWeb.Models
 
         [Display(Name = "Endereço")]
         public string Logradouro { get; set; }
-        //public string SobreNome { get; set; }
-        //public string Celular { get; set; }
+        public string SobreNome { get; set; }
+        public string RG { get; set; }
     }
 }
